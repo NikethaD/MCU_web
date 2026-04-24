@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #0b2a5b;
+  color: white;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT (FORM SIDE DEFAULT) */
+.left {
+  width: 50%;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* RIGHT (IMAGE SIDE DEFAULT - STUDENT) */
+.image-panel {
+  width: 50%;
+  background: linear-gradient(135deg, #123c6b, #1f5fa3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.right img {
+  width: 70%;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+/* GLOW EFFECT */
+.right::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
+  top: 10%;
+  right: 10%;
+  filter: blur(80px);
+}
+
+/* LOGO */
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img { width: 80px; }
+
+.logo h3, .logo p {
+  font-size: 20px;
+}
+
+.thin { font-weight: 300; }
+
+/* FORM */
+.form { display: none; max-width: 500px; }
+.form.active { display: block; }
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #b5c6e0;
+  margin-bottom: 40px;
+}
+
+/* INPUT */
+input, select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #6d87b5;
+  padding: 12px 0;
+  color: white;
+  margin-bottom: 28px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+input:focus, select:focus {
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(255,255,255,0.2);
+}
+
+/* PASSWORD FIELD */
+.password-field { position: relative; }
+
+.password-field span {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  cursor: pointer;
+}
+
+/* FORGOT */
+.forgot {
+  display: block;
+  margin-bottom: 30px;
+  color: #9db2d6;
+  font-size: 14px;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ffffff, #dcdcdc);
+  color: #0b2a5b;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: 0.3s;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* BOTTOM TEXT */
+.bottom-text span {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bottom-text span:hover {
+  background: #ffffff;
+  color: #0b2a5b;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  width: 450px;
+  height: 420px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  padding-left: 70px;
+}
+
+.card.flip { transform: rotateY(180deg); }
+
+.side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.back { transform: rotateY(180deg); }
+
+/* ROW */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+/* SELECT OPTIONS */
+select option {
+  color: black;
+}
+
+/* TOP ICONS */
+.top-icons {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ================= ADMIN ================= */
+
+/* LEFT = IMAGE */
+.admin-left {
+  width: 50%;
+  background: linear-gradient(135deg, #123c6b, #1f5fa3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.admin-left img {
+  width: 80%;
+  max-width: 600px;
+  transform: translateX(20px);
+  filter: drop-shadow(0 25px 50px rgba(0,0,0,0.45));
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+/* RIGHT = FORM */
+.admin-right {
+  width: 50%;
+  background: #0b2a5b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes floatImage {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .container { flex-direction: column; }
+
+  .right { display: none; }
+
+  .left {
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+  }
+
+  h1 { font-size: 36px; }
+}

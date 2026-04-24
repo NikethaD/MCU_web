@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT PANEL -->
+  <div class="left">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="logo.png" alt="logo">
+      <div>
+        <h3>MAHARANI CLUSTER</h3>
+        <p class="thin">UNIVERSITY</p>
+      </div>
+    </div>
+
+    <!-- FLIP CARD -->
+    <div class="card" id="card">
+
+      <!-- FRONT (LOGIN) -->
+      <div class="side front">
+        <div class="form-content">
+
+          <h1>Login</h1>
+          <p class="subtitle">Enter your account details</p>
+
+          <input type="text" placeholder="UUCMS No" id="loginId">
+
+          <div class="password-field">
+            <input type="password" placeholder="Password" id="loginPassword">
+            <span onclick="togglePassword('loginPassword')">👁</span>
+          </div>
+
+          <a class="forgot">Forget Password?</a>
+
+          <button onclick="login()">Login</button>
+
+          <div class="bottom-text">
+            Don’t have an account ?
+            <span onclick="flipToSignup()">Sign up</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BACK (SIGNUP) -->
+      <div class="side back">
+        <div class="form-content">
+
+          <h1>Sign Up</h1>
+          <p class="subtitle">Enter your details to continue</p>
+
+          <input type="text" placeholder="UUCMS No" id="signupId">
+          <input type="email" placeholder="Email-ID" id="signupEmail">
+
+          <div class="password-field">
+            <input type="password" placeholder="Password" id="signupPassword">
+            <span onclick="togglePassword('signupPassword')">👁</span>
+          </div>
+
+          <button onclick="signup()">Sign Up</button>
+
+          <div class="bottom-text">
+            Already have an account?
+            <span onclick="flipToLogin()">Login</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right image-panel">
+    <div class="top-icons">
+    <div class="circle">S</div>
+    <div class="circle" onclick="goAdmin()">A</div>
+    </div>
+    <img src="student.png" alt="illustration">
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

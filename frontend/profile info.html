@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Profile Info</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="logo.png" alt="logo">
+      <div>
+        <h3>MAHARANI CLUSTER</h3>
+        <p>UNIVERSITY</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="form active">
+
+      <h1>Profile info</h1>
+      <p class="subtitle">Let’s know more about you</p>
+
+      <!-- ROW 1 -->
+      <div class="row">
+        <input type="text" placeholder="First Name" id="firstName">
+        <input type="text" placeholder="Second Name" id="lastName">
+      </div>
+
+      <!-- DOB -->
+      <div class="input-icon">
+        <input type="date" id="dob">
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="row">
+        <select id="course">
+          <option value="">BSc Data Science</option>
+          <option>BSc Artificial Intelligence</option>
+          <option>BCA Data Science and Artificial Intelligence</option>
+          <option>BSc Data Science and Artificial Intelligence</option>
+          <option>MCA</option>
+        </select>
+
+        <select id="year">
+          <option value="">1st Year</option>
+          <option>2nd Year</option>
+          <option>3rd Year</option>
+        </select>
+      </div>
+
+      <!-- PHONE -->
+      <input type="text" placeholder="Phone Number" id="phone">
+
+      <button onclick="saveProfile()">Continue</button>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right">
+    <img src="student.png" alt="illustration">
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

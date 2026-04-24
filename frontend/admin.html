@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCU Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container admin-layout">
+
+  <!-- LEFT SIDE (IMAGE) -->
+  <div class="left admin-left image-panel">
+    
+    <div class="top-icons">
+      <div class="circle" onclick="goStudent()">S</div>
+      <div class="circle">A</div>
+    </div>
+
+    <img src="admin.png" class="floating-img" alt="illustration">
+
+  </div>
+
+  <!-- RIGHT SIDE (FORM) -->
+  <div class="right admin-right">
+
+    <div class="card" id="card">
+
+      <!-- LOGIN -->
+      <div class="side front">
+      <div class="form-content">
+        <h1>Login</h1>
+            <p class="subtitle">Enter admin details</p>
+
+            <input type="text" placeholder="Email-ID">
+
+          <div class="password-field">
+            <input type="password" placeholder="Password" id="loginPassword">
+            <span onclick="togglePassword('loginPassword')">👁</span>
+          </div>
+
+            <a class="forgot">Forget Password?</a>
+
+          <button onclick="login()">Login</button>
+
+          <div class="bottom-text">
+            Don’t have an account ?
+            <span onclick="flipToSignup()">Sign up</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIGNUP -->
+      <div class="side back">
+        <div class="form-content">
+
+          <h1>Sign Up</h1>
+          <p class="subtitle">Enter your details to continue</p>
+
+          <input type="text" placeholder="UUCMS No" id="signupId">
+          <input type="email" placeholder="Email-ID" id="signupEmail">
+
+          <div class="password-field">
+            <input type="password" placeholder="Password" id="signupPassword">
+            <span onclick="togglePassword('signupPassword')">👁</span>
+          </div>
+
+          <button onclick="signup()">Sign Up</button>
+
+          <div class="bottom-text">
+            Already have an account?
+            <span onclick="flipToLogin()">Login</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
